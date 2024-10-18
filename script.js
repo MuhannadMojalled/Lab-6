@@ -23,6 +23,15 @@ likesBtn.addEventListener('click', () => {
     likesCount++;
     likesBtn.innerHTML = "👍" + likesCount;
     setCookies();
+
+    /* the aminations were done withe the help of chatgpt, though I modified it, played with it and understood it. */
+    likesBtn.classList.add('bounce1');
+    setTimeout(() => {
+        likesBtn.classList.remove('bounce1');
+    }, 100);
+
+    alertUser("Like");
+
 });
 
 // handel likes
@@ -30,6 +39,14 @@ dislikesBtn.addEventListener('click', () => {
     dislikesCount++;
     dislikesBtn.innerHTML = "👍" + dislikesCount;
     setCookies();
+
+    /* the aminations were done withe the help of chatgpt, though I modified it, played with it and understood it. */
+    dislikesBtn.classList.add('bounce2');
+    setTimeout(() => {
+        dislikesBtn.classList.remove('bounce2');
+    }, 100);
+
+    alertUser("Dislike");
 });
 
 // handel submit
@@ -39,6 +56,7 @@ submitBtn.addEventListener('click', () => {
         pelem.innerHTML = comment.value.trim();
         commentsAreas.appendChild(pelem);
         comment.value = "";
+        alertUser("Comment");
     }
 });
 
@@ -67,5 +85,11 @@ window.onload = () => {
         submitBtn.disabled = true;
     }
 
+}
+
+function alertUser(text) {
+    setTimeout(() => {
+        alert("Your " + text + " Has Been Registered Successfully");
+    }, 100);
 }
 

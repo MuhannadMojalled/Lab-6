@@ -7,6 +7,7 @@ body {
     padding: 0 5%;
     font-size: 40px;
     border-radius: 5px;
+    transition: transform 0.2s ease;
 }
 
 h1,
@@ -47,4 +48,51 @@ h3 {
 
 p {
     font-size: 30px;
+}
+
+/* the aminations were done withe the help of chatgpt, though I modified it, played with it and understood it. */
+
+#like:hover {
+    background-color: rgb(77, 224, 109);
+}
+
+#dislike:hover {
+    background-color: rgb(224, 99, 77);
+}
+
+.bounce1 {
+    animation: bounce-animation1 0.3s ease;
+}
+
+.bounce2 {
+    animation: bounce-animation2 0.3s ease;
+}
+
+
+@keyframes bounce-animation1 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce-animation2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
